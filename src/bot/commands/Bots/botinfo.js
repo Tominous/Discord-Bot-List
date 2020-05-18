@@ -12,7 +12,7 @@ module.exports = class extends Command {
     }
 
     async run(message, [user]) {
-        if (!user || !user.bot) return message.channel.send(`Ping a **bot** to get info about.`);
+        if (!user || !user.bot) return message.channel.send(`Ping a **bot** to get information about.`);
         if (user.id === message.client.user.id) return message.channel.send(`-_- No`);
 
         const bot = await Bots.findOne({ botid: user.id }, { _id: false }).exec();
